@@ -85,11 +85,8 @@ app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 ```
 4. Create CRUD Operations
-Data Model:
-javascript
-Copiar código
-const mongoose = require('mongoose');
 
+```javascript
 const ItemSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -105,9 +102,10 @@ const ItemSchema = new mongoose.Schema({
 });
 
 module.exports = mongoose.model('Item', ItemSchema);
+```
 CRUD Routes:
-javascript
-Copiar código
+
+```javascript
 const express = require('express');
 const router = express.Router();
 const Item = require('./models/Item');
@@ -156,6 +154,7 @@ router.delete('/:id', async (req, res) => {
 });
 
 module.exports = router;
+```
 Integrate the Frontend (Optional)
 You can use React, Angular, or any other framework to create an interface that consumes these routes.
 
